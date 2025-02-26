@@ -1,0 +1,6 @@
+---
+- name: Проверка соединения с узлами
+  hosts: all
+  tasks:
+    - name: Проверка доступности через ping
+      ansible.builtin.ping:

@@ -1,0 +1,10 @@
+---
+- name: Обновление системы
+  hosts: manage_nodes
+  become: yes
+  tasks:
+    - name: Обновить индекс пакетов и установить обновления
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+        update_cache: yes

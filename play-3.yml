@@ -1,0 +1,11 @@
+---
+- name: Сбор системной информации
+  hosts: manage_nodes
+  tasks:
+    - name: Собрать факты
+      ansible.builtin.setup:
+
+    - name: Сохранить факты в файл
+      ansible.builtin.copy:
+        content: "{{ ansible_facts | to_nice_json }}"
+        dest: ~/ansible-facts-25

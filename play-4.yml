@@ -1,0 +1,13 @@
+---
+- name: Создание директорий
+  hosts: manage_nodes
+  tasks:
+    - name: Создать папку Project25
+      ansible.builtin.file:
+        path: ~/Project25
+        state: directory
+
+    - name: Создать папку Ansible25
+      ansible.builtin.file:
+        path: ~/Ansible25
+        state: directory

@@ -1,0 +1,13 @@
+---
+- name: Копирование файлов
+  hosts: manage_nodes
+  tasks:
+    - name: Скопировать project.txt в Project25
+      ansible.builtin.copy:
+        src: /home/user/Project/project.txt
+        dest: /home/user/Project25/project.txt  # Абсолютный путь на узле!
+
+    - name: Скопировать ansible.txt в Ansible25
+      ansible.builtin.copy:
+        src: /home/user/Project/ansible.txt
+        dest: /home/user/Ansible25/ansible.txt
